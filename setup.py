@@ -9,7 +9,7 @@ setup(
     install_requires=(
         'setuptools',
         'MySQL-python',
-        'django-extension',
+        'django-extensions',
         'South',      
     ),
 )  
