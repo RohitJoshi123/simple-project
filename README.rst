@@ -1,4 +1,4 @@
-simple-djangoproject
+simple-project
 -------------------------
 Vanilla Django project that can be used as a "skeleton" to build more complex projects. 
 I use is mainly to prove that the ``project-buildout`` works as needed.
