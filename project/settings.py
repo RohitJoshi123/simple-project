@@ -81,14 +81,12 @@ INSTALLED_APPS = (
     'south',    
 )
 
-# Save these static files as well in the STATIC_ROOT folder
+# Pick up the static files from the ``static/`` folder, and place them under the ``STATIC_ROOT``
 STATICFILES_DIRS =  (
 # CSS and static files, in 'static' folder
 	os.path.join(PROJECT_DIR, 'static'),
 )                            
 
-# URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
-# trailing slash.
-# Serve the admin files from this url. So that they can be taken from the STATIC_ROOT folder. 
+# URL prefix for admin media
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
