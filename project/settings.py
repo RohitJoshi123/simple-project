@@ -1,12 +1,14 @@
 import os.path
 PROJECT_DIR = os.path.dirname(__file__)
 
+# Import the installation specific settings
+from extra_settings import *
+
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )
 
 MANAGERS = ADMINS
-
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -39,11 +41,6 @@ MEDIA_ROOT = ''
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = ''
-
-# URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
-# trailing slash.
-# Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '!8j$ddza5$hrmg&3tw#$!pk-4$43zz!m@&(7*#y#*h&wfivkq='
@@ -78,9 +75,20 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
+	'django.contrib.staticfiles',
 
     'django_extensions',
     'south',    
 )
 
-from extra_settings import *
+# Save these static files as well in the STATIC_ROOT folder
+STATICFILES_DIRS =  (
+# CSS and static files, in 'static' folder
+	os.path.join(PROJECT_DIR, 'static'),
+)                            
+
+# URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
+# trailing slash.
+# Serve the admin files from this url. So that they can be taken from the STATIC_ROOT folder. 
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+
